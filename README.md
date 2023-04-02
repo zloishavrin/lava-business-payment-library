@@ -3,7 +3,7 @@
 ## Установка
 
 ```javascript
-npm install zloishavrin/lava-business-payment-library-nodejs
+npm install zloishavrin/lava-business-payment-library
 ```
 
 ## Использование
