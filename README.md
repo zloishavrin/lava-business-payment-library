@@ -87,7 +87,7 @@ lavaApi.createInvoice({
 ```javascript
 lavaApi.statusInvoice({
 
-  shopId: 'fd2587af-7e22-44b1-bf08-6d5d6663ac5b',
+  shopId: SHOP_ID,
   invoiceId: INVOICE_ID,
   orderId: ORDER_ID
 
