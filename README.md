@@ -30,9 +30,9 @@ It is necessary to pass to the constructor project ID, API-key and domain name (
 const lavaApi = new LavaPayment(SHOP_ID, API_KEY, DOMAIN_NAME);
 ```
 
-### Creating a withdrawal
+### Creating payoff
 
-The withdrawal amount, unique payment identifier in the merchant system, project identifier (if it was specified in the constructor, it is not necessary to specify it in the method) must be specified.
+The payoff amount, unique payment identifier in the merchant system, project identifier (if it was specified in the constructor, it is not necessary to specify it in the method) must be specified.
 
 ```javascript
 lavaApi.createPayoff({
@@ -44,9 +44,9 @@ lavaApi.createPayoff({
 })
 ```
 
-### Request for withdrawal information
+### Request for payoff information
 
-It is also mandatory to specify a unique project identifier in Lava (if it was specified in the constructor, it is not necessary to specify it in the method). It is also mandatory to specify a unique payment identifier in the merchant system (orderId) or a withdrawal number (payoffId).
+It is also mandatory to specify a unique project identifier in Lava (if it was specified in the constructor, it is not necessary to specify it in the method). It is also mandatory to specify a unique payment identifier in the merchant system (orderId) or a payoff number (payoffId).
 
 ```javascript
 lavaApi.payoffInfo({
@@ -58,7 +58,7 @@ lavaApi.payoffInfo({
 })
 ```
 
-### Request for withdrawal rates
+### Request for payoff rates
 
 It is mandatory to specify a unique project identifier in Lava (if it was specified in the constructor, it is not necessary to specify it in the method).
 
