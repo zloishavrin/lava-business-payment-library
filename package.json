@@ -1,7 +1,7 @@
 {
-  "name": "lava-payment-for-nodejs",
+  "name": "lava-payment",
   "version": "1.0.0",
-  "description": "Библиотека для работы с платёжной системой LAVA",
+  "description": "library for working with the LAVA payment system",
   "main": "index.js",
   "scripts": {
 
