@@ -2,37 +2,37 @@
 
 ![LAVA-PAYMENT](https://i.ibb.co/XDn8frs/23-1.png)
 
-Неоффициальная библиотека для работы с платежной системой LAVA. Оффициальная документация для работы с API доступна по [ссылке](https://dev.lava.ru/).
+Unofficial library for working with the LAVA payment system. The official documentation for working with the API is available [here](https://dev.lava.ru/).
 
-## Установка
+## Installation
 
-Установить можно используя менеджеры пакетов, например, npm:
+You can install using package managers such as npm:
 
 ```javascript
 npm install zloishavrin/lava-business-payment-library
 ```
 
-Подключение в проект:
+Connecting into the project:
 
 ```javascript
 const { LavaPayment } = require('lava-payment');
 ```
 
-## Использование
+## Usage
 
-Реализованы все методы доступные в API LAVA BUSINESS.
+All methods available in the LAVA BUSINESS API are implemented.
 
-### Создание экземпляра класса
+### Creating a class instance
 
-Следует передать в конструктор идентификатор проекта, API-ключ и доменное имя (если не указано, то дефолтное значение 'ru').
+It is necessary to pass to the constructor project ID, API-key and domain name (if not specified, the default value of 'ru').
 
 ```javascript
 const lavaApi = new LavaPayment(SHOP_ID, API_KEY, DOMAIN_NAME);
 ```
 
-### Создание вывода
+### Creating a withdrawal
 
-Обязательно указываются сумма вывода, уникальный идентификатор платежа в системе мерчанта, идентификатор проекта (если был указан в конструкторе, то не обязательно указывать в методе).
+The withdrawal amount, unique payment identifier in the merchant system, project identifier (if it was specified in the constructor, it is not necessary to specify it in the method) must be specified.
 
 ```javascript
 lavaApi.createPayoff({
@@ -44,9 +44,9 @@ lavaApi.createPayoff({
 })
 ```
 
-### Запрос на получение информации о выводе
+### Request for withdrawal information
 
-Обязательно указывается также уникальный идентификатор проекта в Lava (если был указан в конструкторе, то не обязательно указывать в методе). Также обязательно указать уникальный идентификатор платежа в системе мерчанта (orderId) или номер вывода (payoffId).
+It is also mandatory to specify a unique project identifier in Lava (if it was specified in the constructor, it is not necessary to specify it in the method). It is also mandatory to specify a unique payment identifier in the merchant system (orderId) or a withdrawal number (payoffId).
 
 ```javascript
 lavaApi.payoffInfo({
@@ -58,17 +58,17 @@ lavaApi.payoffInfo({
 })
 ```
 
-### Запрос на получение тарифов на вывод средств
+### Request for withdrawal rates
 
-Обязательно указывается также уникальный идентификатор проекта в Lava (если был указан в конструкторе, то не обязательно указывать в методе).
+It is mandatory to specify a unique project identifier in Lava (if it was specified in the constructor, it is not necessary to specify it in the method).
 
 ```javascript
 lavaApi.getTariffsPayoff(SHOP_ID)
 ```
 
-### Создание счета
+### Creating invoice
 
-Обязательно указываются сумма на которую выставляется счёт, идентификатор проекта (если был указан в конструкторе, то не обязательно указывать в методе), уникальный идентификатор платежа в системе мерчанта (можно использовать Date()).
+The amount to be invoiced, the project identifier (if it was specified in the constructor, it is not necessary to specify it in the method), the unique payment identifier in the merchant system (you can use Date()) are obligatory.
 
 ```javascript
 lavaApi.createInvoice({
@@ -80,9 +80,9 @@ lavaApi.createInvoice({
 })
 ```
 
-### Статус счета
+### Invoice status
 
-Обязательно указываются уникальный идентификатор проекта в Lava (если был указан в конструкторе, то не обязательно указывать в методе). Также обязательно указать уникальный идентификатор платежа в системе мерчанта (orderId) или идентификатор инвойса (invoiceId).
+It is mandatory to specify a unique project identifier in Lava (if it was specified in the constructor, it is not necessary to specify it in the method). The unique payment identifier in the merchant system (orderId) or invoice identifier (invoiceId) must also be specified.
 
 ```javascript
 lavaApi.statusInvoice({
@@ -94,25 +94,25 @@ lavaApi.statusInvoice({
 })
 ```
 
-### Получение списка методов оплаты
+### Getting a list of payment methods
 
-Обязательно указываются уникальный идентификатор проекта в Lava (если был указан в конструкторе, то не обязательно указывать в методе).
+It is mandatory to specify a unique project identifier in Lava (if it was specified in the constructor, it is not necessary to specify it in the method).
 
 ```javascript
 lavaApi.getAvailableTariffs(SHOP_ID)
 ```
 
-### Получение баланса магазина
+### Getting the store balance
 
-Обязательно указываются уникальный идентификатор проекта в Lava (если был указан в конструкторе, то не обязательно указывать в методе).
+It is mandatory to specify a unique project identifier in Lava (if it was specified in the constructor, it is not necessary to specify it in the method).
 
 ```javascript
 lavaApi.getBalance(SHOP_ID)
 ```
 
-## Зависимости
+## Dependencies
 
-Key|Value
+Package|Assignment
 :-----------:|:--------------------------------------------:
-axios|Для запросов к LAVA API
-crypto|Пакет нужен для реализации метода создания сигнатуры
+axios|For requests to the LAVA API
+crypto|The package is needed to implement the signature creation method
