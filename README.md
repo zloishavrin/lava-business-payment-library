@@ -1,4 +1,4 @@
-# lava-business-payment-library-nodejs
+# lava-business-payment-library
 
 ![LAVA-PAYMENT](https://i.ibb.co/XDn8frs/23-1.png)
 
