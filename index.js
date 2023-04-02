@@ -9,22 +9,18 @@ const createSignature = (key, data) => {
 
 }
 
-const sortObject = o => Object.keys(o).sort().reduce((r, k) => (r[k] = o[k], r), {})
-
 class LavaPayment {
 
 	constructor (
 
 		shopId,
 		secretKey,
-		additionalKey,
 		domainName = 'ru'
 
 	) {
 
 		this.shopId = shopId;
 		this.secretKey = secretKey;
-		this.additionalKey = additionalKey;
 		this.domainName = domainName;
 
 	}
@@ -138,11 +134,6 @@ class LavaPayment {
 
 	}
 
-	checkNotificationSignature(body, signature) {
-
-		return createSignature(this.additionalKey, sortObject(body)) === signature
-
-	}
 }
 	
 module.exports = {LavaPayment};
