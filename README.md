@@ -1,11 +1,21 @@
 # lava-business-payment-library-nodejs
 
+![LAVA-PAYMENT](https://i.ibb.co/XDn8frs/23-1.png)
+
+Неоффициальная библиотека для работы с платежной системой LAVA. Оффициальная документация для работы с API доступна по [ссылке](https://dev.lava.ru/).
+
 ## Установка
 
-Установить можно используя менеджеры пакетов, например, npm.
+Установить можно используя менеджеры пакетов, например, npm:
 
 ```javascript
 npm install zloishavrin/lava-business-payment-library
+```
+
+Подключение в проект:
+
+```javascript
+const { LavaPayment } = require('lava-payment');
 ```
 
 ## Использование
